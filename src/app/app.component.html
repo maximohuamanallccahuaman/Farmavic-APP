@@ -1,0 +1,33 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand" *ngIf="currentUser" style="background-color: yellowgreen;">
+    
+        <img width="80px" alt="Angular Logo" src="/src/assets/image/LogoVerical.png" />
+        <h2>Medicamentos</h2>
+        <div class="spacer"></div>
+        <a class="nav-item nav-link" (click)="logout()">Cerrar sesión</a>
+    
+    <div class="content" role="main"></div>
+</nav>
+
+<!-- Toolbar -->
+<!-- <div class="toolbar" role="banner">
+    <img width="200px" alt="Angular Logo" src="" />
+    <h1>Medicamentos</h1>
+    <div class="spacer"></div>
+    <a class="nav-item nav-link" (click)="logout()">Cerrar sesión</a>
+  
+  </div> -->
+  
+  <div class="content" role="main">
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <alert></alert>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

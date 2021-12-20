@@ -1,0 +1,31 @@
+﻿<div class="card-content" align="center">
+    <img width="180px" src="/src/assets/image/LogoVerical.png">
+    <h3>Sistema de venta de medicamentos</h3>
+</div>
+
+<h2>Iniciar Sesión</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="username">Usuario</label>
+        <input type="text" formControlName="username" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Requiere de un usuario</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Requiere de una contraseña</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Iniciar Secciòn
+        </button>
+        <a routerLink="/register" class="btn btn-link">Registar</a>
+    </div>
+</form>
